@@ -7,7 +7,7 @@ var assert = require('assert');
 var url = 'mongodb://localhost:27017/BURST';
 
 router.get('/', function(req, res, next) {
-  res.render('navbar', {title: 'Burst Card Gallery'})
+  res.render('index', {title: 'Burst Card Gallery'})
 })
 
 
