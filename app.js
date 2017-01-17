@@ -1,0 +1,30 @@
+var express = require('express');
+var path = require('path')
+var morgan = require('morgan');
+var bodyParser = require('body-parser');
+var hbs = require('express-handlebars');
+
+var app = express();
+
+
+
+app.engine('hbs', hbs({extname: 'hbs', defaultLayout: 'main', layoutsDir: __dirname + '/views/layouts/'}));
+
+app.set('', path.join(__dirname, ''))
+
+app.set('view engine', 'hbs');
+
+app.use(morgan('dev'));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(express.static(path.join(__dirname, 'public')));
+
+
+
+
+
+
+var port = 3000;
+app.listen(port,function(){
+  console.log('listening on port ' + port);
+})

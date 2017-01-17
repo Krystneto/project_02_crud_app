@@ -1,0 +1,11 @@
+As a user, I can create cards for Burst Trading Card Game.
+
+As a user, I can view images of every card created in the database.
+
+As a user, I can view a single card and update its information
+with a click of a button.
+
+As a user, I can also view a single card and click a button to remove
+the card from the database.
+
+As a user, I can search all cards base on its category.
