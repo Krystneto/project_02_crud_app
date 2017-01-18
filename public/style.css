@@ -7,14 +7,13 @@ body {
   border: 10px solid gray;
   border-radius: 10px;
   height: 400px;
-  width: 75%;
+  width: 80%;
 }
 
-/*#type-img {
+#type-img {
   border: 2px black solid;
   height: 100px;
 }
-*/
 
 .row {
   padding: 0px;
