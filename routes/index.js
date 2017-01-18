@@ -4,10 +4,10 @@ var mongo = require('mongodb').MongoClient;
 var ObjectId = require('mongodb').ObjectId;
 var assert = require('assert');
 
-var url = 'mongodb://localhost:27017/BURST';
+var url = process.env.MONGODB_URI || 'mongodb://localhost:27017/BURST';
 
 router.get('/', function(req, res, next) {
-  res.render('index', {title: 'Burst Card Gallery'})
+  res.render('card', {title: 'Burst Card Gallery'})
 })
 
 
