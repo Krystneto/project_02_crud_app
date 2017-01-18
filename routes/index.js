@@ -10,25 +10,26 @@ var url = process.env.MONGODB_URI || 'mongodb://localhost:27017/Burst';
 router.get('/', function(req, res, next) {
   mongo.connect(url, function(err, db) {
     db.collection('card_set').find({}).toArray(function(err, results) {
-    assert.equal(null, err);
-    console.log('Pulling cards from card_set collection');
-    db.close();
+      assert.equal(null, err);
+      console.log('Pulling cards from card_set collection');
+      db.close();
+      console.log(results[0].name)
+      res.render('card', {
+        title: 'Burst Card Gallery',
+        name: results[0].name,
+        spot_number: results[0].spot_number,
+        spot_type: results[0].spot_type,
+        aura: results[0].aura,
+        type: results[0].type,
+        class: results[0].class,
+        ability: results[0].ability,
+        burst: results[0].burst,
+        attack: results[0].attack,
+        defense: results[0].defense,
+      });
     });
   });
-  res.render('card', {
-    title: 'Burst Card Gallery',
-    name: results.name,
-    spot_number: results.spot_number,
-    spot_type: results.spot_type,
-    aura: results.aura,
-    type: results.type,
-    class: results.class,
-    ability: results.ability,
-    burst: results.burst,
-    attack: results.attack,
-    defense: results.defense,
-  })
-})
+});
 
 // Create a card page
 router.get('/create-a-card', function(req, res, next) {
