@@ -15,6 +15,7 @@ app.set('views', path.join(__dirname, 'views'))
 
 app.set('view engine', 'hbs');
 
+hbs.registerPartial('')
 
 app.use(morgan('dev'));
 app.use(bodyParser.json());

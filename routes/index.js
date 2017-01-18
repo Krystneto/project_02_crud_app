@@ -13,7 +13,6 @@ router.get('/', function(req, res, next) {
       assert.equal(null, err);
       console.log('Pulling cards from card_set collection');
       db.close();
-      console.log(results[0].name)
       res.render('card', {
         title: 'Burst Card Gallery',
         name: results[0].name,
@@ -56,8 +55,8 @@ router.post('/insert_card', function(req, res, next) {
       assert.equal(null, err);
       console.log(card.name + 'inserted into the card_set');
       db.close();
-    })
-  })
+    });
+  });
 });
 
 
