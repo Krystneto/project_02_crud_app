@@ -30,16 +30,16 @@ router.get('/create-a-card', function(req, res, next) {
 // Insert card information into database
 router.post('/insert_card', function(req, res, next) {
   var card = {
-    name: req.body.name,
-    spot_number: req.body.spot_number,
-    spot_type: req.body.spot_type,
-    aura: req.body.aura,
-    type: req.body.type,
-    class: req.body.class,
-    ability: req.body.ability,
-    burst: req.body.burst,
-    attack: req.body.attack,
-    defense: req.body.defense,
+    'name': req.body.name,
+    'spot_number': req.body.spot_number,
+    'spot_type': req.body.spot_type,
+    'aura': req.body.aura,
+    'type': req.body.type,
+    'class': req.body.class,
+    'ability': req.body.ability,
+    'burst': req.body.burst,
+    'attack': req.body.attack,
+    'defense': req.body.defense,
   };
   mongo.connect(url, function(err, db) {
     assert.equal(null, err);
@@ -47,6 +47,7 @@ router.post('/insert_card', function(req, res, next) {
       assert.equal(null, err);
       console.log(card.name + 'inserted into the card_set');
       db.close();
+      res.send
     });
   });
 });
