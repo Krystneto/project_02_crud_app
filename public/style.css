@@ -12,10 +12,20 @@ body {
 
 #type-img {
   border: 2px black solid;
-  height: 100px;
+  height: 70px;
+  width: 66%;
 }
 
 .row {
   padding: 0px;
 }
 
+.edit {
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.create {
+  margin-top: 20px;
+  margin-left: 20px;
+}
