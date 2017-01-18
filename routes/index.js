@@ -13,18 +13,10 @@ router.get('/', function(req, res, next) {
       assert.equal(null, err);
       console.log('Pulling cards from card_set collection');
       db.close();
+      var card = results[0];
       res.render('card', {
         title: 'Burst Card Gallery',
-        name: results[0].name,
-        spot_number: results[0].spot_number,
-        spot_type: results[0].spot_type,
-        aura: results[0].aura,
-        type: results[0].type,
-        class: results[0].class,
-        ability: results[0].ability,
-        burst: results[0].burst,
-        attack: results[0].attack,
-        defense: results[0].defense,
+        card: card
       });
     });
   });
@@ -70,7 +62,16 @@ router.get('/delete', function(req, res, next) {
   res.render('delete')
 })
 
-router.get('/')
+router.get('/card/judge', function(req, res) {
+  mongo.connect(url, function(err, db) {
+    assert.equal(null, err);
+    db.collection('card_set').find({name: 'Judge'}).toArray(function(err, results){
+      var card = results[0];
+      res.json(card);
+    })
+  })
+})
+
 
 
 router.post('/update/:name', function(req, res, next) {
