@@ -54,10 +54,46 @@ router.post('/insert_card', function(req, res) {
 });
 
 
-// Update a card page
-router.get('/update', function(req, res, next) {
-  res.json({status: 200});
+// render update.hbs page
+router.get('/update/:name', function(req, res, next) {
+  var name = req.params.name
+  mongo.connect(url, function(err, db) {
+    db.collection('card_set').find({name: name}).toArray(function(err, results){
+      assert.equal(null, err);
+      console.log('searching for ' + results[0].name);
+      res.render('update', {card: results[0]});
+      db.close();
+    });
+  });
+});
+
+router.post('/edit', function(req, res) {
+  var card = {
+    name: req.body.name,
+    spot_number: req.body.spot_number,
+    spot_type: req.body.spot_type,
+    aura: req.body.aura,
+    type: req.body.type,
+    group: req.body.group,
+    ability: req.body.ability,
+    burst: req.body.burst,
+    attack: req.body.attack,
+    defense: req.body.defense,
+  };
+
+  mongo.connect(url, function(err, db) {
+    assert.equal(null, err);
+    db.collection('card_set').updateOne({name:card.name},{$set:card},
+     function(err, result) {
+      assert.equal(null, err);
+      console.log(card.name + ' updated into the card_set');
+      db.close();
+      res.json({status: 200})
+    });
+  });
 })
+
+
 
 
 // Delete a card page
@@ -86,10 +122,10 @@ router.post('/delete', function(req, res, next) {
 
 
 
-router.post('/card', function(req, res) {
-  var name = req.body.name;
-  mongo.connect(url)
-})
+// router.post('/card', function(req, res) {
+//   var name = req.body.name;
+//   mongo.connect(url)
+// })
 
 
 

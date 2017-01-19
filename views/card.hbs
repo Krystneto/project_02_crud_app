@@ -25,15 +25,17 @@
       <div class="col-xs-2" id="defense">{{this.defense}}</div>
     </div>
   </div>
-  <button class="edit btn-warning">Edit</button>
-  <button class="delete btn-danger">Delete</button>
+  <form action="/update/{{this.name}}" method="GET">
+    <button class="edit btn-warning">Edit</button>
+  </form>
+    <button class="delete btn-danger">Delete</button>
 </div>
 {{/each}}
 
 
 {{!-- browser won't render template tag --}}
 <template>
-<input type="text" value="{{this.defense}}">
+  <input type="text" value="{{{this.defense}}}">
 </template>
 
 
