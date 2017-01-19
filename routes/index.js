@@ -58,16 +58,34 @@ router.get('/update', function(req, res, next) {
   res.render('update')
 })
 
-// Delete a card page
-router.get('/delete', function(req, res, next) {
-  res.render('delete')
-})
 
-router.get('/card/judge', function(req, res) {
+// Delete a card page
+router.post('/delete', function(req, res, next) {
+  var name = req.body.name;
+  console.log(name);
   mongo.connect(url, function(err, db) {
     assert.equal(null, err);
-    db.collection('card_set').find({name: 'Judge'}).toArray(function(err, results){
-      var card = results[0];
+    db.collection('card_set').remove({name: name});
+    console.log(name);
+    db.close();
+    res.render('delete')
+  })
+})
+
+
+
+
+
+
+
+
+
+router.get('/card/:name', function(req, res) {
+  var name = req.params.name;
+  mongo.connect(url, function(err, db) {
+    assert.equal(null, err);
+    db.collection('card_set').find({'name':name}).toArray(function(err, results){
+      var card = results;
       res.json(card);
     })
   })

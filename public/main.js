@@ -12,6 +12,8 @@ $('.edit').on('click', function(evt) {
   })
 })
 
+
+// create a card button handler
 $('.create').on('click', function(evt) {
   console.log('clicked');
   $.post('/insert_card', {
@@ -30,3 +32,18 @@ $('.create').on('click', function(evt) {
     console.log(response)
   })
 })
+
+
+
+// delete a card button handler
+$('.delete').on('click', function(evt) {
+  $.post('/delete', {name: $('#name').text()}, function(response) {
+    console.log($('#name').text());
+  })
+})
+
+
+
+
+
+
