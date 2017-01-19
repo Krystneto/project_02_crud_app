@@ -2,14 +2,6 @@ console.log('Client side browser');
 
 
 
-// edit button handler
-$('.edit').on('click', function(evt) {
-  console.log('clicked');
-  $.get('/card', function(response) {
-    console.log(response);
-  })
-})
-
 
 // create a card button handler
 $('.create').on('click', function(evt) {
@@ -26,17 +18,28 @@ $('.create').on('click', function(evt) {
     defense:$("input[name='defense']").val(),
   },
   function(response) {
-  })
-})
+    if (response.status === 200) {
+      window.location.pathname = '/';
+    }
+  });
+});
 
+// edit button handler
+$('.edit').on('click', function(evt) {
+  console.log('clicked');
+  $.get('/update', function(response) {
+    if (response.status === 200) {
+    }
+  });
+});
 
 
 // delete a card button handler
 $('.delete').on('click', function(evt) {
-  $(this).parents('.container').remove();
-  $.post('/delete', {name:$('#name').text()},
+  $.post('/delete', {name: $('#name').text()},
     function(response) {
   });
+  $(this).parents('.container').remove();
 });
 
 

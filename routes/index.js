@@ -48,15 +48,15 @@ router.post('/insert_card', function(req, res) {
       assert.equal(null, err);
       console.log(card.name + ' inserted into the card_set');
       db.close();
+      res.json({status: 200})
     });
   });
-  res.redirect('/');
 });
 
 
 // Update a card page
 router.get('/update', function(req, res, next) {
-  res.render('update')
+  res.json({status: 200});
 })
 
 
@@ -67,28 +67,28 @@ router.post('/delete', function(req, res, next) {
   mongo.connect(url, function(err, db) {
     assert.equal(null, err);
     db.collection('card_set').remove({name: name});
-    console.log(name);
     db.close();
-    res.render('delete')
+    res.render('card')
   })
 })
 
 
-router.get('/card/:name', function(req, res) {
-  var name = req.params.name;
-  mongo.connect(url, function(err, db) {
-    assert.equal(null, err);
-    db.collection('card_set').find({'name':name}).toArray(function(err, results){
-      var card = results;
-      res.json(card);
-    })
-  })
-})
+// router.get('/card/:name', function(req, res) {
+//   var name = req.params.name;
+//   mongo.connect(url, function(err, db) {
+//     assert.equal(null, err);
+//     db.collection('card_set').find({'name':name}).toArray(function(err, results){
+//       var card = results;
+//       res.json(card);
+//     })
+//   })
+// })
 
 
 
-router.post('/update/:name', function(req, res, next) {
-
+router.post('/card', function(req, res) {
+  var name = req.body.name;
+  mongo.connect(url)
 })
 
 
