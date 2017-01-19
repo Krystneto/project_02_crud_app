@@ -7,7 +7,7 @@ console.log('Hello from public');
 // edit button handler
 $('.edit').on('click', function(evt) {
   console.log('clicked');
-  $.get('/card/judge', function(response) {
+  $.get('/card', function(response) {
     console.log(response);
   })
 })

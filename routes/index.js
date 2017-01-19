@@ -12,12 +12,12 @@ router.get('/', function(req, res, next) {
     db.collection('card_set').find({}).toArray(function(err, results) {
       assert.equal(null, err);
       console.log('Pulling cards from card_set collection');
-      db.close();
-      var card = results[0];
+      console.log(results);
       res.render('card', {
-        title: 'Burst Card Gallery',
-        card: card
+        // title: 'Burst Card Gallery',
+        card: results
       });
+        db.close();
     });
   });
 });
@@ -71,13 +71,6 @@ router.post('/delete', function(req, res, next) {
     res.render('delete')
   })
 })
-
-
-
-
-
-
-
 
 
 router.get('/card/:name', function(req, res) {
