@@ -1,5 +1,6 @@
 body {
-  background-color: pink;
+  background-image: url(https://cdn.spacetelescope.org/archives/images/publicationjpg/heic0604a.jpg);
+  background-size: full;
 }
 
 #card {
@@ -11,9 +12,9 @@ body {
 }
 
 #type-img {
-  border: 2px black solid;
-  height: 70px;
+  height: 100px;
   width: 66%;
+  border: 2px solid black;
 }
 
 .row {
@@ -28,4 +29,8 @@ body {
 .create {
   margin-top: 20px;
   margin-left: 20px;
+}
+
+footer {
+  color: white;
 }

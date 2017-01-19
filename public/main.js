@@ -1,6 +1,4 @@
-console.log('Hello from public');
-
-
+console.log('Client side browser');
 
 
 
@@ -15,7 +13,6 @@ $('.edit').on('click', function(evt) {
 
 // create a card button handler
 $('.create').on('click', function(evt) {
-  console.log('clicked');
   $.post('/insert_card', {
     name:$('input[name="name"]').val(),
     spot_number:$("input[name='spot_number']").val(),
@@ -29,7 +26,6 @@ $('.create').on('click', function(evt) {
     defense:$("input[name='defense']").val(),
   },
   function(response) {
-    console.log(response)
   })
 })
 
@@ -37,10 +33,11 @@ $('.create').on('click', function(evt) {
 
 // delete a card button handler
 $('.delete').on('click', function(evt) {
-  $.post('/delete', {name: $('#name').text()}, function(response) {
-    console.log($('#name').text());
-  })
-})
+  $(this).parents('.container').remove();
+  $.post('/delete', {name:$('#name').text()},
+    function(response) {
+  });
+});
 
 
 

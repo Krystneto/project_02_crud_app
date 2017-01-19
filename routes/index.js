@@ -4,7 +4,7 @@ var mongo = require('mongodb').MongoClient;
 var ObjectId = require('mongodb').ObjectId;
 var assert = require('assert');
 
-var url = process.env.MONGODB_URI || 'mongodb://localhost:27017/Burst';
+var url = process.env.MONGODB_URI || 'mongodb://localhost:27017/sandbox';
 
 // Home Page
 router.get('/', function(req, res, next) {
@@ -28,7 +28,7 @@ router.get('/create-a-card', function(req, res, next) {
 })
 
 // Insert card information into database
-router.post('/insert_card', function(req, res, next) {
+router.post('/insert_card', function(req, res) {
   var card = {
     name: req.body.name,
     spot_number: req.body.spot_number,
@@ -41,15 +41,16 @@ router.post('/insert_card', function(req, res, next) {
     attack: req.body.attack,
     defense: req.body.defense,
   };
+
   mongo.connect(url, function(err, db) {
     assert.equal(null, err);
     db.collection('card_set').insertOne(card, function(err, result){
       assert.equal(null, err);
-      console.log(card.name + 'inserted into the card_set');
+      console.log(card.name + ' inserted into the card_set');
       db.close();
-      res.json(result)
     });
   });
+  res.redirect('/');
 });
 
 
