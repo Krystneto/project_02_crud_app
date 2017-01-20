@@ -26,9 +26,8 @@ code. I have not been able to fully comprehend how to use handlebars.js
 properly on the client side.
 
 
-
 Wireframes link
 
-https://wireframepro.mockflow.com/editor.jsp?editor=on&publicid=D82b12d043676f50efe7626afe5b2eb2f&perm=Create&projectid=Dbe8ce6e289e57db6d992d0a0becb2c69&ptitle=project_02_crud_app&category=form
+https://wireframepro.mockflow.com/view/Dbe8ce6e289e57db6d992d0a0becb2c69
 
 
