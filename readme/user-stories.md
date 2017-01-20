@@ -6,9 +6,9 @@ Create tab.
 As a user, I can view images of every card created in the database.
 
 As a user, I can view a single card and update its information
-with a click of a Update button.
+with a click of a Edit button.
 
 As a user, I can also view a single card and click the Delete button to remove
 the card from the database.
 
-As a user, I can search all cards base on its category.
+
