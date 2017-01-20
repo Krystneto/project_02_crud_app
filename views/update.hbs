@@ -1,39 +1,42 @@
+
+
 <div class="container">
   <div id="card">
     <div class="row">
       <div class="col-xs-4" id="name">Name
-        <input type="text" size="16" name="name" placeholder="{{{this.name}}}"></div>
-      <div class="col-xs-3 col-xs-offset-2" id="spot_number">S_Number
-        <input type="text" size="2" name="spot_number"></div>
+        <input type="text" size="16" name="name" value={{card.name}}></div>
+      <div class="col-xs-3 col-xs-offset-2" id="spot_number" v>S_Number
+        <input type="text" size="2" name="spot_number" value={{card.spot_number}}></div>
       <div class="col-xs-3" id="spot_type">S_Type
-        <input type="text" size="4" name="spot_type"></div>
+        <input type="text" size="4" name="spot_type" value={{card.spot_type}}></div>
     </div>
     <div class="row">
       <div class="col-xs-10" id="aura">Aura
-        <input type="text" size="10" name="aura"></div>
+        <input type="text" size="10" name="aura" value={{card.aura}}></div>
     <div class="row">
       <div class="col-xs-8 col-xs-offset-2" id="type-img">Image</div>
     </div>
     <div class="row">
       <div class="col-xs-5 col-xs-offset-1" id="type">Type
-        <input type="text" size="14" name="type"></div>
+        <input type="text" size="14" name="type" value={{card.type}}></div>
       <div class="col-xs-5" id="class">Group
-        <input type="text" size="14" name="group"></div>
+        <input type="text" size="14" name="group" value={{card.group}}></div>
     </div>
     <div class="row">
       <div class="col-xs-10 col-xs-offset-1" id="ability">Ability
-        <textarea class="form-control" rows="3" name="ability"></textarea></div>
+        <textarea class="form-control" rows="3" name="ability" value={{card.ability}}></textarea></div>
     </div>
     <div class="row">
       <div class="col-xs-3 col-xs-offset-1" id="burst">Burst
-        <input type="text" size="2" name="burst"></div>
+        <input type="text" size="2" name="burst" value={{card.burst}}></div>
       <div class="col-xs-2 col-xs-offset-2" id="attack">Attack
-        <input type="text" size="3" name="attack"></div>
+        <input type="text" size="3" name="attack" value={{card.attack}}></div>
       <div class="col-xs-2" id="defense">Defense
-        <input type="text" size="3" name="defense"></div>
+        <input type="text" size="3" name="defense" value={{card.defense}}></div>
     </div>
   </div>
 </div>
+
 
 <div>
   <button class="update btn-success">Update</button>
