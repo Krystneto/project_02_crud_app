@@ -30,15 +30,21 @@ body {
 
 .create {
   margin-top: 20px;
-  margin-left: 20px;
+  margin-left: 10px;
 }
 
 .delete {
   margin: 20px 0px 10px 10px;
 }
 
+.update {
+  margin-top: 10px;
+/*  margin-left: -30px;*/
+}
+
 footer {
   color: white;
   margin: 50px 0 20px;
   font-size: 10px;
+  margin-left: 30px;
 }

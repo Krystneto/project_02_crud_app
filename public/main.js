@@ -25,7 +25,6 @@ $('.create').on('click', function(evt) {
 // edit button handler
 $('.edit').on('click', function(evt) {
   console.log('clicked');
-  // $('body').append(response);
 });
 
 // Update card button handler
