@@ -14,7 +14,6 @@ router.get('/', function(req, res, next) {
       console.log('Pulling cards from card_set collection');
       console.log(results);
       res.render('card', {
-        // title: 'Burst Card Gallery',
         card: results
       });
         db.close();
@@ -67,6 +66,7 @@ router.get('/update/:name', function(req, res, next) {
   });
 });
 
+// post request from update button
 router.post('/edit', function(req, res) {
   var card = {
     name: req.body.name,
@@ -80,7 +80,6 @@ router.post('/edit', function(req, res) {
     attack: req.body.attack,
     defense: req.body.defense,
   };
-
   mongo.connect(url, function(err, db) {
     assert.equal(null, err);
     db.collection('card_set').updateOne({name:card.name},{$set:card},
@@ -91,7 +90,7 @@ router.post('/edit', function(req, res) {
       res.json({status: 200})
     });
   });
-})
+});
 
 
 // Delete a card page
