@@ -1,17 +1,10 @@
 Technologies Planned for use
 
-HTML5
-CSS3 with BootStrap -- framework
-Javascript
-JQuery
-Express-Handlebars -- templating
-MongoDB -- database
-Node.js
-AJAX
-Express.js --middleware
-Body-parser --middleware
-Serve-favicon -- middleware
-Morgan -- middleware
+HTML5, CSS3 with BootStrap, Javascript, JQuery, Node.js, AJAX.
+Middleware: Express, Express-Handlebars, Body-parser, Serve-favicon
+Morgan.
+Database: MongoDB and Heroku
+
 
 My approach for this project was to create a simple template for myself
 to create a card database for my card game called Burst. My homepage will
