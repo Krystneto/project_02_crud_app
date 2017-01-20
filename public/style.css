@@ -1,10 +1,12 @@
 body {
   background-image: url(https://cdn.spacetelescope.org/archives/images/publicationjpg/heic0604a.jpg);
   background-size: full;
+  color: black;
+  font-weight: bold;
 }
 
 #card {
-  background-color: lightgray;
+  background-color: pink;
   border: 10px solid gray;
   border-radius: 10px;
   height: 400px;
@@ -13,8 +15,9 @@ body {
 
 #type-img {
   height: 100px;
-  width: 66%;
-  border: 2px solid black;
+  width: 75%;
+  border: 4px solid white;
+  margin-left: 40px;
 }
 
 .row {
@@ -22,8 +25,7 @@ body {
 }
 
 .edit {
-  margin-top: 20px;
-  margin-left: 20px;
+  margin: 20px 0px 10px 10px;
 }
 
 .create {
@@ -31,6 +33,12 @@ body {
   margin-left: 20px;
 }
 
+.delete {
+  margin: 20px 0px 10px 10px;
+}
+
 footer {
   color: white;
+  margin: 50px 0 20px;
+  font-size: 10px;
 }

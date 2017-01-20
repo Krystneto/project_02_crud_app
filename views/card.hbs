@@ -10,7 +10,7 @@
       <div class="col-xs-10 col-xs-offset-1" id="aura">{{this.aura}}</div>
     </div>
     <div class="row">
-      <div class="col-xs-10 col-xs-offset-1" id="type-img">Image</div>
+      <div class="col-xs-9 col-xs-offset-1" id="type-img">Image</div>
     </div>
     <div class="row">
       <div class="col-xs-5 col-xs-offset-1" id="type">{{this.type}}</div>
@@ -25,9 +25,9 @@
       <div class="col-xs-2" id="defense">{{this.defense}}</div>
     </div>
   </div>
-  <form action="/update/{{this.name}}" method="GET">
-    <button class="edit btn-warning">Edit</button>
-  </form>
+    <form action="/update/{{this.name}}" method="GET">
+      <button class="edit btn-warning">Edit</button>
+    </form>
     <button class="delete btn-danger">Delete</button>
 </div>
 {{/each}}

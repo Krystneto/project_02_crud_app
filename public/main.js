@@ -1,8 +1,6 @@
 console.log('Client side browser');
 
 
-
-
 // create a card button handler
 $('.create').on('click', function(evt) {
   $.post('/insert_card', {
@@ -48,10 +46,9 @@ $('.update').on('click', function(evt) {
   function(response) {
     if (response.status === 200) {
       window.location.pathname = '/';
-    }
+    };
   });
-})
-
+});
 
 // delete a card button handler
 $('.delete').on('click', function(evt) {
@@ -60,6 +57,7 @@ $('.delete').on('click', function(evt) {
   });
   $(this).parents('.container').remove();
 });
+
 
 
 

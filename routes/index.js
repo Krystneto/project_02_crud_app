@@ -94,8 +94,6 @@ router.post('/edit', function(req, res) {
 })
 
 
-
-
 // Delete a card page
 router.post('/delete', function(req, res, next) {
   var name = req.body.name;
@@ -108,24 +106,6 @@ router.post('/delete', function(req, res, next) {
   })
 })
 
-
-// router.get('/card/:name', function(req, res) {
-//   var name = req.params.name;
-//   mongo.connect(url, function(err, db) {
-//     assert.equal(null, err);
-//     db.collection('card_set').find({'name':name}).toArray(function(err, results){
-//       var card = results;
-//       res.json(card);
-//     })
-//   })
-// })
-
-
-
-// router.post('/card', function(req, res) {
-//   var name = req.body.name;
-//   mongo.connect(url)
-// })
 
 
 
