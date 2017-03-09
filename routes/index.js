@@ -22,12 +22,12 @@ router.get('/', function(req, res, next) {
 });
 
 // Create a card page
-router.get('/create-a-card', function(req, res, next) {
+router.get('/cards', function(req, res, next) {
   res.render('create');
 })
 
 // Insert card information into database
-router.post('/insert_card', function(req, res) {
+router.post('/cards', function(req, res) {
   var card = {
     name: req.body.name,
     spot_number: req.body.spot_number,

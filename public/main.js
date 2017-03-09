@@ -3,7 +3,7 @@ console.log('Client side browser');
 
 // create a card button handler
 $('.create').on('click', function(evt) {
-  $.post('/insert_card', {
+  $.post('/cards', {
     name:$('input[name="name"]').val(),
     spot_number:$("input[name='spot_number']").val(),
     spot_type:$("input[name='spot_type']").val(),
