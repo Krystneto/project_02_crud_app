@@ -1,5 +1,3 @@
-console.log('Client side browser');
-
 
 // create a card button handler
 $('.create').on('click', function(evt) {
@@ -29,7 +27,6 @@ $('.edit').on('click', function(evt) {
 
 // Update card button handler
 $('.update').on('click', function(evt) {
-  console.log('clicked');
   $.post('/edit', {
     name:$('input[name="name"]').val(),
     spot_number:$("input[name='spot_number']").val(),
