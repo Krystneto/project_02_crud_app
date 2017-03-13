@@ -1,7 +1,7 @@
 ###Burst Trading Card Generator
 
-This a card generator app for a trading card game that I created. This 
-is app will create and store the cards into a database. Along with 
+This a card generator app for a trading card game that I created in a
+one week sprint. This is app will create and store the cards into a database. Along with 
 creating a card there are options to update or delete specific cards.
 
 ###Technologies Planned for use
